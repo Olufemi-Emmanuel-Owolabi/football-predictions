@@ -120,10 +120,10 @@ export default function App() {
       <div className="header">
         <div>
           <h1>Weekend goal predictions</h1>
-          <p>Claude analyses live data to predict which teams will score</p>
+          <p>Nectar analyses live data to predict which teams will score</p>
         </div>
         <button className="fetch-btn" onClick={fetchPredictions} disabled={loading}>
-          {loading ? 'Analysing...' : predictions.length ? 'Refresh' : 'Generate predictions'}
+          {loading ? 'Analysing...' : predictions.length ? 'Refresh' : 'Generate Nectar predictions'}
         </button>
       </div>
 
