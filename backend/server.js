@@ -37,9 +37,13 @@ async function fetchFromFootballAPI(endpoint) {
       headers: footballHeaders
     });
     const data = await res.json();
+    if (data.errors && Object.keys(data.errors).length > 0) {
+      console.error('API-Football error:', JSON.stringify(data.errors));
+    }
+    console.log(`API call: ${endpoint} → ${data.results || 0} results`);
     return data.response || [];
   } catch (err) {
-    console.error('Football API error:', err.message);
+    console.error('Football API fetch error:', err.message);
     return [];
   }
 }
@@ -197,6 +201,16 @@ app.get('/api/predictions', async (req, res) => {
   }
 });
 
+
+app.get('/api/test', async (req, res) => {     // ✅ CORRECT - before listen
+  const data = await fetchFromFootballAPI('/fixtures?league=39&season=2025&next=5');
+  res.json({
+    key_set: !!FOOTBALL_KEY,
+    key_preview: FOOTBALL_KEY ? FOOTBALL_KEY.substring(0, 8) + '...' : 'MISSING',
+    fixtures_returned: data.length,
+    sample: data[0] || null
+  });
+});
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
