@@ -50,7 +50,7 @@ async function fetchFromFootballAPI(endpoint) {
 
 async function getFixturesWithData(leagueId, season) {
   const fixtures = await fetchFromFootballAPI(
-    `/fixtures?league=${leagueId}&season=${season}&next=8&status=NS`
+    `/fixtures?league=${leagueId}&season=${season}&next=8`
   );
 
   const enriched = [];
