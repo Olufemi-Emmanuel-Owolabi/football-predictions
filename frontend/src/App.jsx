@@ -175,7 +175,7 @@ export default function App() {
 
       {!loading && predictions.length === 0 && !error && (
         <div className="empty-state">
-          <p>Click "Generate predictions" to have Claude analyse this weekend's fixtures</p>
+          <p>Click "Generate predictions" to have Nectar analyse this weekend's fixtures</p>
         </div>
       )}
     </div>
