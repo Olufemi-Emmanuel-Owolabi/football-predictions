@@ -66,7 +66,7 @@ async function getFixturesWithData(competitionCode, competitionName, flag) {
 
   const enriched = [];
 
-  for (const match of data.matches.slice(0, 6)) {
+  for (const match of data.matches.slice(0, 3)) {
     const homeId = match.homeTeam.id;
     const awayId = match.awayTeam.id;
 
