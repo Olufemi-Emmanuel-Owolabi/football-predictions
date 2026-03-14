@@ -44,8 +44,3 @@ p { font-size: 13px; color: #666; margin-top: 4px; }
 .expand-hint { font-size: 11px; color: #aaa; text-align: right; margin-top: 6px; }
 .empty-state { text-align: center; padding: 60px 20px; color: #888; }
 .fixtures-list { display: flex; flex-direction: column; }
-```
-
-**`frontend/.env`** (local testing)
-```
-VITE_BACKEND_URL=http://localhost:3000
