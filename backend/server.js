@@ -118,7 +118,7 @@ async function getFixturesWithData(competitionCode, competitionName, flag) {
       }
     });
 
-    await new Promise(r => setTimeout(r, 6000));
+    await new Promise(r => setTimeout(r, 200));
   }
 
   return enriched;
@@ -197,7 +197,7 @@ app.get('/api/predictions', async (req, res) => {
       console.log(`Fetching ${comp.name}...`);
       const fixtures = await getFixturesWithData(comp.code, comp.name, comp.flag);
       allFixtures = [...allFixtures, ...fixtures];
-      await new Promise(r => setTimeout(r, 7000));
+      await new Promise(r => setTimeout(r, 1000));
     }
 
     console.log(`Total fixtures fetched: ${allFixtures.length}`);
