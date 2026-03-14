@@ -1,0 +1,23 @@
+{
+  "name": "football-predictions-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "node-fetch": "^3.3.0"
+  }
+}
+```
+
+**`backend/.env`** (local testing only — never commit this)
+```
+ANTHROPIC_API_KEY=your_claude_api_key_here
+FOOTBALL_API_KEY=your_rapidapi_key_here
