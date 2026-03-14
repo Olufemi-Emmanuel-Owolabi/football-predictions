@@ -15,9 +15,3 @@
     "node-fetch": "^3.3.0"
   }
 }
-```
-
-**`backend/.env`** (local testing only — never commit this)
-```
-ANTHROPIC_API_KEY=your_claude_api_key_here
-FOOTBALL_API_KEY=your_rapidapi_key_here
